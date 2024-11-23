@@ -33,22 +33,42 @@ namespace ConsoleUI
             */
 
             // Create a list of Vehicle called vehicles
+            List<Vehicle> vehicles = new List<Vehicle>();
 
             /*
              * Create 4 instances: 1 Car, 1 Motorcycle, and then 2 instances of type Vehicle (use explicit typing) but use constuctors from derived classes
-             * 
-             * Set the properties values with object initializer syntax
              */
+            Car funCar = new Car() {Year = "2024", Make = "ClownCar", Model = "HonkHonk", HasFwd = true};
+            Motorcycle burnerCycle = new Motorcycle() {Year = "1960", Make = "Harley", Model = "Ford", HasTwoSideCarts = true};
+            Vehicle theGoatCar = new Car(){Year = "2024", Make = "ClownCar", Model = "HonkHonk", HasTwd = true};
+            Vehicle  theSmexyMotorcycle = new Motorcycle(){Year = "2024", Make = "ClownCar", Model = "HonkHonk", HasSideCart = true};
+            
+            
+             /* Set the properties values with object initializer syntax
+             */
+            
 
             /*
              * Add the 4 vehicles to the list
              * Using a foreach loop iterate through the list and display each of the properties
              */
+            vehicles.Add(funCar);
+            vehicles.Add(burnerCycle);
+            vehicles.Add(theGoatCar);
+            vehicles.Add(theSmexyMotorcycle);
+            foreach (Vehicle vehicle in vehicles)
+            {
+             //Console.WriteLine($"{vehicle.Year} - {vehicle.Make} - {vehicle.Model}");
+             //}
 
-            // Call each of the drive methods for one car and one motorcycle
+             // Call each of the drive methods for one car and one motorcycle
+             vehicle.DriveVirtual();
+             vehicle.DriveAbstract();
+             Console.WriteLine("\n");
+             
+            }
 
             #endregion            
-            Console.ReadLine();
         }
     }
 }
